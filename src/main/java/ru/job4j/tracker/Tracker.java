@@ -10,6 +10,7 @@ public class Tracker {
         items[size++] = item;
         return item;
     }
+
     public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
