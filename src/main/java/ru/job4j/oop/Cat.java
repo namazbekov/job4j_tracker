@@ -11,24 +11,20 @@ public class Cat {
     public void eat(String meat) {
         this.food = meat;
     }
-    public void setName(String nickname) {
-        this.name = nickname;
+    public void giveNick(String nick) {
+        this.name = nick;
     }
 
     public static void main(String[] args) {
         System.out.println("There are gav's food.");
         Cat gav = new Cat();
-        gav.setName("Gavrila");
+        gav.giveNick("Gav");
         gav.eat("kotleta - ");
         gav.show();
         System.out.println("There are black's food.");
         Cat black = new Cat();
-        black.setName("Murka");
+        black.giveNick("Murka");
         black.eat("fish - ");
         black.show();
     }
-    public void giveNick(String nick){
-
-    }
-
 }
