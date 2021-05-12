@@ -19,12 +19,12 @@ public class Cat {
         System.out.println("There are gav's food.");
         Cat gav = new Cat();
         gav.setName("Gavrila");
-        gav.eat("kotleta -");
+        gav.eat("kotleta - ");
         gav.show();
         System.out.println("There are black's food.");
         Cat black = new Cat();
         black.setName("Murka");
-        black.eat("fish -");
+        black.eat("fish - ");
         black.show();
     }
     public void giveNick(String nick){
