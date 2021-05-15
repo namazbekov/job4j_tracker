@@ -21,7 +21,7 @@ public class PointTest  {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
         Point c = new Point(0, 2);
-        double dist = a.distance3d(b);
-        assertThat(dist, is(8.0));
+        double dis = a.distance(b, c);
+        assertThat(dis, is(8.0));
     }
 }
