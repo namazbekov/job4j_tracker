@@ -7,13 +7,13 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
 
-public class PointTest extends TestCase {
+public class PointTest  {
 
     @Test
     public void Then2() {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
         double dist = a.distance(b);
-        assertThat(dist, closeTo(2, 0));
+        assertThat(dist, is(2));
     }
 }
