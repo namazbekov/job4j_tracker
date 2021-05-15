@@ -1,5 +1,4 @@
 package ru.job4j.oop.Triangle;
-import ru.job4j.oop.Point;
 
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;

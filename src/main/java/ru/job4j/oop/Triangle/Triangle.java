@@ -1,8 +1,6 @@
 package ru.job4j.oop.Triangle;
 
-import ru.job4j.oop.Point;
-
-import static java.lang.Math.sqrt;
+import ru.job4j.condition.Point;
 
 public class Triangle {
 
