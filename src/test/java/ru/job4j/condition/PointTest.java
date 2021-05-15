@@ -1,6 +1,6 @@
 package ru.job4j.condition;
 
-import junit.framework.TestCase;
+import static org.hamcrest.core.Is.is;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,6 +14,6 @@ public class PointTest  {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
         double dist = a.distance(b);
-        assertThat(dist, is(2));
+        assertThat(dist, is(2.0));
     }
 }
