@@ -16,4 +16,12 @@ public class PointTest  {
         double dist = a.distance(b);
         assertThat(dist, is(2.0));
     }
+    @Test
+    public void Then() {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        Point c = new Point(0, 2);
+        double dist = a.distance3d(b);
+        assertThat(dist, is(8.0));
+    }
 }
