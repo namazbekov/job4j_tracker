@@ -4,8 +4,12 @@ public class Item {
     private int id;
     private String name;
 
-    public void Idem(int id) {
-        this.id = id;
+    public void Idem() {
+
+    }
+
+    public void Idem(String name) {
+        this.name = name ;
     }
 
     public void Idem(int id, String name) {
