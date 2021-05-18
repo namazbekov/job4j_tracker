@@ -1,13 +1,16 @@
 package ru.job4j.Profession;
 
 public class Builder extends Engineer {
-    private int Build;
+    private int build;
 
-    public void toBuild (String house) {
-
+    public void toBuild (int house) {
+        this.build = house;
+    }
+    public String name() {
+        return super.getName();
     }
 
     public int getBuild() {
-        return this.Build;
+        return this.build;
     }
 }
