@@ -19,12 +19,4 @@ public class Profession {
     public String getBirthday() {
         return birthday;
     }
-
-    public class Engineer extends Profession {
-
-    }
-
-    public class Doctor extends Profession {
-
-    }
 }
