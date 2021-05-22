@@ -23,12 +23,11 @@ public class Library {
             Book boo = books[index];
             System.out.println(boo.getName() + " - " + boo.getCount());
         }
-        int rsl = -1;
         System.out.println("seach cleanCode");
         for (int index = 0; index < books.length; index++) {
-            if (books[index] == cleanCode) {
-                rsl = index;
-                System.out.println(rsl);
+            Book boo = books[index];
+            if(boo.getName().equals("cleanCode")) {
+                System.out.println(boo.getName() + " - " + boo.getCount());
             }
         }
     }
