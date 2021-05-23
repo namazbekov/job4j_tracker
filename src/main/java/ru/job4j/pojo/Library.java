@@ -24,8 +24,8 @@ public class Library {
             System.out.println(boo.getName() + " - " + boo.getCount());
         }
         System.out.println("seach cleanCode");
-        for (int index = 0; index < books.length; index++) {
-            Book boo = books[index];
+        for (Book sea: books) {
+            Book boo = sea;
             if(boo.getName().equals("cleanCode")) {
                 System.out.println(boo.getName() + " - " + boo.getCount());
             }
