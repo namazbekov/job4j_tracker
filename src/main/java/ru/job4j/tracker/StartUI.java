@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class StartUI {
 
+
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -70,18 +71,24 @@ public class StartUI {
             } else if (select == 6) {
                 run = false;
             }
+            if (select != 6) {
+                System.out.println("Пользователь выбрал: " + select);
+            } else {
+                run = false;
+            }
         }
     }
 
     private void showMenu() {
-        System.out.println("Меню.");
-        System.out.println("0. Создать новую заявку");
-        System.out.println("1. Посмотреть все заявки");
-        System.out.println("2. Редактировать заявку");
-        System.out.println("3. Удалить заявку");
-        System.out.println("4. Найти заявку по Id");
-        System.out.println("5. Найти заявки по имени");
-        System.out.println("6. Выход");
+        String[] menu = {
+                "Создать новую заявку", "Посмотреть все заявки", "Редактировать заявку",
+                "Удалить заявку", "Найти заявку по Id", "Найти заявки по имени",
+                "Выход"
+        };
+        System.out.println("Menu:");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println(i + ". " + menu[i]);
+        }
     }
 
 
