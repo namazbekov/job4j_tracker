@@ -44,7 +44,7 @@ public class Tracker {
         }
         return rsl;
     }
-    @Override
+
     public boolean replace(int id, Item item) {
         int searchId = indexOf(id);
         if(searchId == -1) {
@@ -54,7 +54,7 @@ public class Tracker {
             items[searchId] = item;
             return true;
     }
-    @Override
+
     public boolean delete(int id) {
         int index = indexOf(id);
         boolean rsl = index != -1;
