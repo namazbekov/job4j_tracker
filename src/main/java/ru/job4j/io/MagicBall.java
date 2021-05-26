@@ -11,7 +11,6 @@ public class MagicBall {
             String name = input.nextLine();
             int answer = new Random().nextInt(3);
             if (name.equals("end") || name.equals("хватит")) {
-                break;
             } else if (answer == 1) {
                 System.out.println("Нет");
             } else if (answer == 0) {
