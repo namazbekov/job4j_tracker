@@ -33,7 +33,6 @@ public class StartUI {
                 Item item = new Item(name);
                 if (tracker.replace(id, item)) {
                     System.out.println("Успешно изменено");
-                    tracker.replace(id, item);
                 } else {
                     System.out.println("Нет параметра, введите занова:");
                 }
@@ -43,7 +42,6 @@ public class StartUI {
                 int id = Integer.valueOf(scanner.nextLine());
                 if (tracker.delete(id)) {
                     System.out.println("Заявка удалена");
-                    tracker.delete(id);
                 } else {
                     System.out.println("Заявка не найдена");
                 }
@@ -61,12 +59,12 @@ public class StartUI {
                 System.out.println("Поиск по имени");
                 System.out.println("Введите имя:");
                 String name = scanner.nextLine();
-                if (tracker.findByName(name).length > 0) {
-                    for (Item item : tracker.findByName(name)) {
-                        System.out.println("id - " + item.getId() + " имя - " + item.getName());
+                for (Item item : tracker.findByName(name)) {
+                    if (name.length() > 0) {
+                    System.out.println("id - " + item.getId() + " имя - " + item.getName());
+                    } else {
+                        System.out.println("Заявка с таким именем не найдена");
                     }
-                } else {
-                    System.out.println("Заявки с таким именем не найдена");
                 }
 
             } else if (select == 6) {
