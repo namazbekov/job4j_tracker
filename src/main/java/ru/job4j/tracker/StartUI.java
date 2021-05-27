@@ -67,7 +67,7 @@ public class StartUI {
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
                     for (Item item : items) {
-                        System.out.println("id - " + item.getId() + " имя - " + item.getName());
+                        System.out.println(item);
                     }
                 } else {
                         System.out.println("Заявки с именем: " + name + " не найдены.");
