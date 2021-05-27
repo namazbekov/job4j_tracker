@@ -46,7 +46,7 @@ public class StartUI {
                 System.out.println("Веедите id:");
                 int id = Integer.valueOf(scanner.nextLine());
                 if (tracker.delete(id)) {
-                    System.out.println("Заявка удалена");
+                    System.out.println("Зая0вка удалена");
                 } else {
                     System.out.println("Заявка не найдена");
                 }
@@ -64,12 +64,13 @@ public class StartUI {
                 System.out.println("Поиск по имени");
                 System.out.println("Введите имя:");
                 String name = scanner.nextLine();
-                for (Item item : tracker.findByName(name)) {
-                    if (name.length() > 0) {
-                    System.out.println("id - " + item.getId() + " имя - " + item.getName());
-                    } else {
-                        System.out.println("Заявка с таким именем не найдена");
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println("id - " + item.getId() + " имя - " + item.getName());
                     }
+                } else {
+                        System.out.println("Заявки с именем: " + name + " не найдены.");
                 }
 
             } else if (select == 6) {
