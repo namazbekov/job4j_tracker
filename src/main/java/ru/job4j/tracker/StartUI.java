@@ -21,8 +21,13 @@ public class StartUI {
 
             } else if (select == 1) {
                 System.out.println("=== Посмотреть все заявки ====");
-                for (Item item : tracker.findAll()) {
-                    System.out.println("id - " + item.getId() + " имя - " + item.getName());
+                Item[] items = tracker.findAll();
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Хранилище еще не содержит заявок");
                 }
             } else if (select == 2) {
                 System.out.println("Змена заявки");
