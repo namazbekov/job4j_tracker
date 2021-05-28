@@ -8,10 +8,10 @@ public class Bus implements Transport {
     }
 
     @Override
-    public String passengers(int passengers) {
-        System.out.println("Колличество человек " + passengers );
-        return null;
+    public int passengers() {
+        return 0;
     }
+
 
     @Override
     public Double refuel(double refuel) {
