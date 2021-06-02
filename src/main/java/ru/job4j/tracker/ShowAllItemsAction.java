@@ -14,7 +14,7 @@ public class ShowAllItemsAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        out.println("=== Посмотреть все заявки ====");
+        out.println("Посмотреть все заявки");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
             for (Item item : items) {

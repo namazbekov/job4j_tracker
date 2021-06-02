@@ -9,7 +9,7 @@ public class SearchByIdAction implements UserAction {
 
     @Override
     public String name() {
-        return "Поиск по Id";
+        return "Поиск по id";
     }
 
     @Override
