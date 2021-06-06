@@ -8,20 +8,21 @@ public class FindEl {
             if (value[index].equals(key)) {
                 rsl = index;
                 break;
-            } else {
-                throw new ElementNotFoundException("Нет элемента");
             }
+        }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Элемент не найдкен!!");
         }
         return rsl;
     }
 
     public static void main(String[] args) {
-        String[] str = {"puma", "addidas", "nike"};
+        String[] cars = {"puma", "addidas", "nike"};
         try {
-            System.out.println(FindEl.indexOf(str, "nike"));
+            System.out.println(FindEl.indexOf(cars, "nike"));
+
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }
