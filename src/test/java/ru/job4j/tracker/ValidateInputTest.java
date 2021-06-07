@@ -31,11 +31,21 @@ public class ValidateInputTest {
     public void whenInvalidInputManyNumber() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"2","2","2","2"}
+                new String[] {"0","2"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(2));
+        assertThat(selected, is(0));
+    }
+    @Test
+    public void whenNegativeValidInput() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"-1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int result = input.askInt("Enter menu:");
+        assertThat(result, is(-1));
     }
 
 }
