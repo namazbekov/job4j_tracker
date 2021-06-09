@@ -8,8 +8,8 @@ public class SingleTrackerTest {
 
     @Test
     public void whenObject() {
-    SingleTracker singleTracker = new SingleTracker();
-    SingleTracker singleTracker1 = singleTracker;
-    assertSame(singleTracker, singleTracker1);
+        SingleTracker singleTracker = SingleTracker.getInstance();
+        SingleTracker singleTracker1 = singleTracker;
+        assertSame(singleTracker, singleTracker1);
     }
 }
