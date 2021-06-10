@@ -9,7 +9,7 @@ public class SingleTrackerTest {
     @Test
     public void whenObject() {
         SingleTracker singleTracker = SingleTracker.getInstance();
-        SingleTracker singleTracker1 = singleTracker;
+        SingleTracker singleTracker1 = SingleTracker.getInstance();
         assertSame(singleTracker, singleTracker1);
     }
 }
