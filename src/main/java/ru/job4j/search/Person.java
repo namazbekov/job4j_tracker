@@ -29,7 +29,7 @@ public class Person {
         return address;
     }
 
-    public boolean contains(Object key) {
-        return false;
+    public boolean contains(String key) {
+        return true;
     }
 }
