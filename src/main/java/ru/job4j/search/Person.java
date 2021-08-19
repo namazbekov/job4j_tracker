@@ -28,8 +28,4 @@ public class Person {
     public String getAddress() {
         return address;
     }
-
-    public boolean contains(String key) {
-        return true;
-    }
 }
