@@ -1,4 +1,4 @@
-package ru.job4j.search;
+package ru.job4j.list;
 import java.util.List;
 
 public class ConvertList2Array {
