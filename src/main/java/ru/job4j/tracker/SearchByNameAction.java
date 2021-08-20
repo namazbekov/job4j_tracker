@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SearchByNameAction implements UserAction {
@@ -9,7 +8,6 @@ public class SearchByNameAction implements UserAction {
     public SearchByNameAction(Output out) {
         this.out = out;
     }
-
 
     @Override
     public String name() {
@@ -22,7 +20,7 @@ public class SearchByNameAction implements UserAction {
         String name = input.askStr("Введите имя: ");
         List<Item> items = tracker.findByName(name);
         if (items.size() > 0) {
-            for (Object item : items) {
+            for (Item item : items) {
                 out.println(item);
             }
         } else {
