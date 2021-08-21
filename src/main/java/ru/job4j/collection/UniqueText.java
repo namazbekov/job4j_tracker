@@ -12,7 +12,9 @@ public class UniqueText {
         for(String orig : origin) {
             check.addAll(Collections.singleton(orig));
             for (String tex : text) {
-                return check.contains(tex);
+                if(!check.contains(tex)) {
+                    return false;
+                }
             }
         }
         return rsl;
