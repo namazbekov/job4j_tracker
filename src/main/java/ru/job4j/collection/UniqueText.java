@@ -11,10 +11,10 @@ public class UniqueText {
         HashSet<String> check = new HashSet<>();
         for(String orig : origin) {
             check.addAll(Collections.singleton(orig));
-            for (String tex : text) {
-                if(!check.contains(tex)) {
-                    return false;
-                }
+        }
+        for (String tex : text) {
+            if(!check.contains(tex)) {
+                return false;
             }
         }
         return rsl;
