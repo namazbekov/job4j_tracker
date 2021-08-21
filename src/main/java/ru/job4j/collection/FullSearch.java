@@ -9,9 +9,6 @@ public class FullSearch {
         HashSet<String> numbers = new HashSet<>();
         for (Task lis : list) {
             numbers.add(lis.getNumber());
-            for (String num : numbers){
-                System.out.println(num);
-            }
         }
         return numbers;
     }
