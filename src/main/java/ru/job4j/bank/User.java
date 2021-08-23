@@ -11,7 +11,7 @@ public class User {
         this.username = username;
     }
 
-    public User getPassport() {
+    public String getPassport() {
         return passport;
     }
 

@@ -10,44 +10,56 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        if (!users.containsKey(user.getPassport())) {
-            users.put(user.getPassport(), new ArrayList<Account>());
-        }
+        users.putIfAbsent(user,new ArrayList<>());
     }
 
     public void addAccount(String passport, Account account) {
-        findByPassport(passport);
-        for (User us : users.keySet()) {
+        User user = findByPassport(passport);
+        if (user != null) {
             if (users.containsKey(account)) {
-                users.put(account.getRequisite(), new ArrayList<Account>());
+                List<Account> list = users.get(user);
+                if (!list.contains(account)) {
+                    list.add(account);
+                }
             }
         }
     }
 
     public User findByPassport(String passport) {
-        String key = "";
         for (User us : users.keySet()) {
-            if (users.get(us).equals(passport)){
-                key = passport;
-                break;
+            if (us.getPassport().equals(passport)){
+                return us;
             }
         }
         return null;
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        findByPassport(passport);
-        for (User user : users.keySet(passport)) {
-            if (users.containsKey(requisite)) {
-                passport.get
+        User user = findByPassport(passport);
+        if (user != null) {
+            List<Account> list = users.get(user);
+            for (Account listFind : list) {
+                if (listFind.getRequisite().equals(requisite)) {
+                    return listFind;
+                }
             }
         }
+
         return null;
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
+        Account user1 = findByRequisite(srcPassport, srcRequisite);
+        Account user2 = findByRequisite(destPassport, destRequisite);
+        if (user1 != null) {
+            if (user2 != null) {
+                if (user1.getBalance() > amount) {
+
+                }
+            }
+        }
         return rsl;
     }
 }
