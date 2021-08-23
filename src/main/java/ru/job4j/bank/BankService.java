@@ -56,7 +56,6 @@ public class BankService {
         if (user1 != null) {
             if (user2 != null) {
                 if (user1.getBalance() > amount) {
-
                 }
             }
         }

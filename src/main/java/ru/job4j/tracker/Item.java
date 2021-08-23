@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import javax.swing.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -73,17 +74,14 @@ public class Item implements Comparable<Item> {
     }
 
     public static void main(String[] args) {
-        List<Item> items = new ArrayList<>();
-        Item item1 = new Item(1,"own");
-        Item item2 = new Item(4,"two");
-        Item item3 = new Item(2,"three");
-        Item item4 = new Item(3,"thor");
-        items.add(item4);
-        items.add(item1);
-        items.add(item2);
-        items.add(item3);
-        Collections.sort(items);
-        List<Item> item = new ArrayList<>();
-        System.out.println(items);
+        List<Item> jobs = Arrays.asList(
+                new Item(4,"Impl task"),
+                new Item(2,"Fix bugs"),
+                new Item(1,"Reboot server")
+        );
+        System.out.println(jobs);
+        Collections.sort(jobs);
+        System.out.println(jobs);
     }
+
 }
