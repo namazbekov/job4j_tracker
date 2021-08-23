@@ -1,6 +1,5 @@
 package ru.job4j.bank;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,13 +50,12 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
-        Account user1 = findByRequisite(srcPassport, srcRequisite);
-        Account user2 = findByRequisite(destPassport, destRequisite);
-        if (user1 != null) {
-            if (user2 != null) {
-                if (user1.getBalance() > amount) {
-                }
-            }
+        Account srcAcc = findByRequisite(srcPassport, srcRequisite);
+        Account destAcc = findByRequisite(destPassport, destRequisite);
+        if (srcAcc != null && destAcc != null && srcAcc.getBalance() >= amount) {
+            srcAcc.setBalance(srcAcc.getBalance() - amount);
+            destAcc.setBalance(destAcc.getBalance() + amount);
+            rsl = true;
         }
         return rsl;
     }
