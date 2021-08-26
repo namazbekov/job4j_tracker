@@ -19,7 +19,7 @@ public class ItemNameComparatorTest{
         list.add(item1);
         list.add(item2);
         list.add(item3);
-        Collections.sort(list, Collections.reverseOrder());
+        Collections.sort(list, new ItemNameComparator());
         List<Item> expected = new ArrayList<>();
         expected.add(item3);
         expected.add(item2);

@@ -22,7 +22,7 @@ public class ItemIdComparatorTest {
         list.add(item3);
         list.add(item2);
         list.add(item1);
-        Collections.sort(list);
+        Collections.sort(list, new ItemIdComparator());
         List<Item> expected = new ArrayList<>();
         expected.add(item1);
         expected.add(item2);
