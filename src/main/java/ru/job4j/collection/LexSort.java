@@ -9,8 +9,8 @@ public class LexSort implements Comparator<String> {
     public int compare(String left, String right) {
         String[] regex1 = left.split("\\. ");
         String[] regex2 = right.split("\\. ");
-        int i = Integer.parseInt(String.valueOf(regex1.length));
-        int j = Integer.parseInt(String.valueOf(regex2.length));
+        int i = Integer.parseInt(regex1[0]);
+        int j = Integer.parseInt(regex2[0]);
         return Integer.compare(i,j);
     }
 }
