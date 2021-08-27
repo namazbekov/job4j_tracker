@@ -13,6 +13,7 @@ public class ConvertList {
         }
         return rsl;
     }
+
     public static void main(String[] args) {
         List<String[]> names = new ArrayList<>();
         names.add(new String[] {"Petr", "Arsentev"});

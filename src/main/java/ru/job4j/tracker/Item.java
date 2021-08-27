@@ -26,17 +26,8 @@ public class Item implements Comparable<Item> {
         this.id = id;
     }
 
-    public void Item(LocalDateTime created) {
+    public Item(LocalDateTime created) {
         this.created = created;
-    }
-
-    public void Item(String name) {
-        this.name = name;
-    }
-
-    public void Item(int id, String name) {
-        this.id = id;
-        this.name = name;
     }
 
     public LocalDateTime getCreated() {
@@ -61,12 +52,10 @@ public class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                "," + "name='" + name + '\'' +
-                '}';
+        return "Item{" + "id=" + id
+                + "," + "name='" + name
+                + '\'' + '}';
     }
-
 
     @Override
     public int compareTo(Item o) {
@@ -75,9 +64,9 @@ public class Item implements Comparable<Item> {
 
     public static void main(String[] args) {
         List<Item> jobs = Arrays.asList(
-                new Item(4,"Impl task"),
-                new Item(2,"Fix bugs"),
-                new Item(1,"Reboot server")
+                new Item(4, "Impl task"),
+                new Item(2, "Fix bugs"),
+                new Item(1, "Reboot server")
         );
         System.out.println(jobs);
         Collections.sort(jobs);

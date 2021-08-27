@@ -14,6 +14,7 @@ public class Tracker {
         items.add(item);
         return item;
     }
+
     public List<Item> findAll() {
         return List.copyOf(items);
     }
@@ -46,7 +47,7 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int searchId = indexOf(id);
-        if(searchId == -1) {
+        if (searchId == -1) {
             return false;
         }
             item.setId(id);

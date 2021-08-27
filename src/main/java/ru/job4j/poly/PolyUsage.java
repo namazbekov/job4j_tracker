@@ -8,7 +8,7 @@ public class PolyUsage {
         Vehicle bu = bus;
         Train train = new Train();
         Vehicle tra = train;
-        Vehicle[] vehicle = new Vehicle[]{plan, bus , train} ;
+        Vehicle[] vehicle = new Vehicle[]{plan, bus, train};
         for (Vehicle v : vehicle) {
             v.move();
         }

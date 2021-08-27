@@ -6,7 +6,7 @@ public class Error {
     private int status;
     private String message;
 
-    public Error(){
+    public Error() {
 
     }
 
@@ -24,8 +24,8 @@ public class Error {
     }
 
     public void printInfo() {
-        System.out.println("Активность : "+ active);
-        System.out.println("Сколько минут был онлайн : "+ status + " минут");
+        System.out.println("Активность : " + active);
+        System.out.println("Сколько минут был онлайн : " + status + " минут");
         System.out.println("Сообщения : " + message);
 
     }

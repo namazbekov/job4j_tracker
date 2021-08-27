@@ -17,6 +17,7 @@ public class Computer {
         this.ssd = ssd;
         this.cpu = cpu;
     }
+
     public static void main(String[] args) {
         Computer third = new Computer();
         third.printInfo();
@@ -25,6 +26,7 @@ public class Computer {
         Computer comp = new Computer(true, 256, "AMD Ryzen 5 3600");
         comp.printInfo();
     }
+
     public void printInfo() {
         System.out.println("Много мониторов: " + multiMonitor);
         System.out.println("SSD: " + ssd + " GB");

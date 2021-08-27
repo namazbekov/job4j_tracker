@@ -70,10 +70,11 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, Arrays.asList(actions));
         assertThat(out.toString(), is(
-                "Menu:" + System.lineSeparator() +
-                        "0. Выход" + System.lineSeparator()
+                "Menu:" + System.lineSeparator()
+                        + "0. Выход" + System.lineSeparator()
         ));
     }
+
     @Test
     public void whenFindAllAction() {
         Output out = new StubOutput();
@@ -87,14 +88,15 @@ public class StartUITest {
                 new ShowAllItemsAction(out), new ExitAction()
         };
         new StartUI(out).init(in, tracker, Arrays.asList(actions));
-        assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. Посмотреть все заявки" +
-                System.lineSeparator() + "1. Выход" + System.lineSeparator()
+        assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. Посмотреть все заявки"
+                + System.lineSeparator() + "1. Выход" + System.lineSeparator()
                 + "Посмотреть все заявки" + System.lineSeparator() + item + System.lineSeparator()
                 + "Menu:" + System.lineSeparator() + "0. Посмотреть все заявки"
                 + System.lineSeparator() + "1. Выход" + System.lineSeparator()
         ));
 
     }
+
     @Test
     public void whenFindByNameAction() {
         Output out = new StubOutput();
@@ -104,16 +106,16 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("Big");
         tracker.add(item);
-        UserAction[] actions = {
-                new SearchByNameAction(out), new ExitAction()
-        };
+        UserAction[] actions = {new SearchByNameAction(out), new ExitAction()};
         new StartUI(out).init(in, tracker, Arrays.asList(actions));
-        assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. Поиск по имени" + System.lineSeparator()
-                + "1. Выход" + System.lineSeparator() + "Поиск по имени"
-                + System.lineSeparator() + item + System.lineSeparator() + "Menu:" + System.lineSeparator()
+        assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. Поиск по имени"
+                + System.lineSeparator() + "1. Выход" + System.lineSeparator() + "Поиск по имени"
+                + System.lineSeparator() + item + System.lineSeparator() + "Menu:"
+                + System.lineSeparator()
                 + "0. Поиск по имени" + System.lineSeparator() + "1. Выход" + System.lineSeparator()
         ));
     }
+
     @Test
     public void whenFindByIdAction() {
         Output out = new StubOutput();
@@ -127,17 +129,21 @@ public class StartUITest {
                 new SearchByIdAction(out), new ExitAction()
         };
         new StartUI(out).init(in, tracker, Arrays.asList(actions));
-        assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. Поиск по id" + System.lineSeparator()
+        assertThat(out.toString(), is("Menu:" + System.lineSeparator()
+                + "0. Поиск по id" + System.lineSeparator()
                 + "1. Выход" + System.lineSeparator() + " Поиск по id"
-                + System.lineSeparator() + item + System.lineSeparator() + "Menu:" + System.lineSeparator()
-                + "0. Поиск по id" + System.lineSeparator() + "1. Выход" + System.lineSeparator()
+                + System.lineSeparator() + item + System.lineSeparator()
+                + "Menu:" + System.lineSeparator()
+                + "0. Поиск по id" + System.lineSeparator() + "1. Выход"
+                + System.lineSeparator()
         ));
     }
+
     @Test
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"6","0"}
+                new String[] {"6", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{

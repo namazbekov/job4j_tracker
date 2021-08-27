@@ -1,4 +1,4 @@
-package ru.job4j.Profession;
+package ru.job4j.profession;
 
 public class Profession {
 
@@ -7,9 +7,9 @@ public class Profession {
     private String education;
     private String birthday;
 
-    public void Prof( String name, String sureName, String education, String birthday) {
+    public void prof(String name, String sureName, String education, String birthday) {
         this.name = name;
-        this.birthday= birthday;
+        this.birthday = birthday;
         this.education = education;
         this.sureName = sureName;
     }
@@ -17,12 +17,15 @@ public class Profession {
     public String getName() {
         return name;
     }
+
     public String getSureName() {
         return sureName;
     }
+
     public  String getEducation() {
         return education;
     }
+
     public String getBirthday() {
         return birthday;
     }

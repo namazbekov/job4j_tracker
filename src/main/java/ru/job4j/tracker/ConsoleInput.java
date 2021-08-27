@@ -1,7 +1,10 @@
 package ru.job4j.tracker;
 import java.util.Scanner;
+
 public class ConsoleInput implements Input {
-    Scanner scanner = new Scanner(System.in);
+
+    private Scanner scanner = new Scanner(System.in);
+
     @Override
     public String askStr(String question) {
         System.out.print(question);
@@ -11,5 +14,13 @@ public class ConsoleInput implements Input {
     @Override
     public int askInt(String question) {
         return Integer.parseInt(askStr(question));
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 }

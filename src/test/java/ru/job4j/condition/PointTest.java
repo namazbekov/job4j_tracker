@@ -12,6 +12,7 @@ import static org.junit.Assert.assertThat;
             double rsl = a.distance3d(b);
             assertThat(rsl, is(2.0));
         }
+
         @Test
         public void wen022to220Then28() {
             Point a = new Point(0, 0, 0);

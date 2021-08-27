@@ -9,13 +9,13 @@ import java.util.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class ItemNameComparatorTest{
+public class ItemNameComparatorTest {
     @Test
     public void toNameTest() {
         List<Item> list = new ArrayList<>();
         Item item1 = new Item(4, "bmv");
-        Item item2 = new Item(2,"mazda");
-        Item item3 = new Item(6,"mercedes");
+        Item item2 = new Item(2, "mazda");
+        Item item3 = new Item(6, "mercedes");
         list.add(item1);
         list.add(item2);
         list.add(item3);

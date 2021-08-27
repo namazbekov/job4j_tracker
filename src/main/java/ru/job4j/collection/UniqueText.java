@@ -9,11 +9,11 @@ public class UniqueText {
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
-        for(String orig : origin) {
+        for (String orig : origin) {
             check.addAll(Collections.singleton(orig));
         }
         for (String tex : text) {
-            if(!check.contains(tex)) {
+            if (!check.contains(tex)) {
                 return false;
             }
         }

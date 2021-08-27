@@ -9,8 +9,9 @@ public class FactTest  {
         Fact fact = new Fact();
         Fact.calc(-1);
     }
+
     @Test
-    public void More() {
+    public void more() {
         Fact fact = new Fact();
         Fact.calc(1);
     }

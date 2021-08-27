@@ -4,17 +4,15 @@ package ru.job4j.collection;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class JobByNameTest{
+public class JobByNameTest {
 
     @Test
-    public void JobByNameTest() {
+    public void jobByNameTest() {
         List<Job> jobs = Arrays.asList(
                 new Job("Fix bug", 4),
                 new Job("Fix bug", 2),

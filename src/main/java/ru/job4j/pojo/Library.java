@@ -26,7 +26,7 @@ public class Library {
         System.out.println("seach cleanCode");
         for (Book sea: books) {
             Book boo = sea;
-            if(boo.getName().equals("cleanCode")) {
+            if (boo.getName().equals("cleanCode")) {
                 System.out.println(boo.getName() + " - " + boo.getCount());
             }
         }

@@ -1,4 +1,4 @@
-package ru.job4j.oop.Triangle;
+package ru.job4j.oop.triangle;
 
 import ru.job4j.condition.Point;
 
@@ -17,7 +17,6 @@ public class Triangle {
     public double period(double a, double b, double c) {
         return (a + b + c) / 2;
     }
-
 
     public boolean exist(double ab, double ac, double bc) {
         return (ab + ac) > bc && (ab + bc) > ac && (bc + ac) > ab;

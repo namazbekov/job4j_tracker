@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class ItemTest {
 
     @Test
-    public void Comparable() {
+    public void comparable() {
         List<String> actual = Arrays.asList("a", "c", "b");
         Collections.sort(actual);
         List<String> expected = Arrays.asList("a", "b", "c");
