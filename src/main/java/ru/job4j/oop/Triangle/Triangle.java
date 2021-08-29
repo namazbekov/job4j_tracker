@@ -1,4 +1,4 @@
-package ru.job4j.oop.triangle;
+package ru.job4j.oop.Triangle;
 
 import ru.job4j.condition.Point;
 
