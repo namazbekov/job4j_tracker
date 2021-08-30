@@ -14,3 +14,6 @@ notifications:
       - dastan.namazbekov@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
+env:
+  global:
+    - CODECOV_TOKEN="8bc37301-f631-42fd-aca1-e820718c30a9"
