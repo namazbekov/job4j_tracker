@@ -45,9 +45,8 @@ public class BankService {
 
     /**
      * метод ищет пользователя по имени, ищет в списке users с помшью foreach
-     * , и если есть совпадения возвращает имя пользователя, в противном случае возварщает null
      * @param passport
-     * @return
+     * @return  если есть совпадения возвращает имя пользователя, в противном случае возварщает null
      */
     public User findByPassport(String passport) {
         for (User us : users.keySet()) {
@@ -62,12 +61,11 @@ public class BankService {
      * метод ищет пользователя с помощью двух параметров имени и реквизитов
      * , сначала идет поиск по имени  и если пользователь есть
      * , получаем весь список для поиска по реквизитам
-     * , еслие есть сходство получаем список расчетных счетов пользователя
-     * в противном случае возвращаем null
      *
      * @param passport
      * @param requisite
-     * @return
+     * @return еслие есть сходство получаем список расчетных счетов пользователя
+     *      * в противном случае возвращаем null
      */
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
@@ -87,13 +85,12 @@ public class BankService {
      * метод отправки денег с расчетного счета на другой счет осуществляется по двум пользователям
      * ,которых мы должны нати в списке с помошью принятых пяти параметров имен и реквизитов и amount.
      * после идет проверка этих пользователей на нераность null и положительного баланса на счету
-     * и если будет истина , то идет процесс уменьшения баланса одного пользователя и увеличение другого.
      * @param srcPassport
      * @param srcRequisite
      * @param destPassport
      * @param destRequisite
      * @param amount
-     * @return
+     * @return если будет истина , то идет процесс уменьшения баланса одного пользователя и увеличение другого.
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
