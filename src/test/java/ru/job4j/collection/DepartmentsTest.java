@@ -22,4 +22,18 @@ public class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenMissed1() {
+        List<String> input = Arrays.asList("k2/sk1");
+        List<String> expect = Arrays.asList("k2", "k2/sk1");
+        List<String> result = Departments.fillGaps(input);
+        assertThat(result, is(expect));
+    }
+    @Test
+    public void whenNonChange1() {
+        List<String> input = Arrays.asList("k2", "k2/sk1");
+        List<String> expect = Arrays.asList("k2", "k2/sk1");
+        List<String> result = Departments.fillGaps(input);
+        assertThat(result, is(expect));
+    }
 }
