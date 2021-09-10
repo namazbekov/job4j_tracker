@@ -8,12 +8,11 @@ public class Departments {
         Set<String> tmp = new LinkedHashSet<>();
         for (String value : deps) {
             String start = "";
-            if (!value.equals(start) && !value.matches("^" + start)) {
-                for (String el : value.split("/")) {
-                    start += "/" + el;
-                    tmp.add(start.replaceAll("^/", ""));
-                }
+            for (String el : value.split("/")) {
+                start = "".equals(start) ? el : start + "/" + el;
+                tmp.add(start);
             }
+
         }
         return new ArrayList<>(tmp);
     }
