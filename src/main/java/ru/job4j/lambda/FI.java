@@ -11,7 +11,7 @@ public class FI {
                 new Attachment("image 2", 23)
         };
         Arrays.sort(atts, (left, right) -> left.getName().compareTo(right.getName()));
-        Arrays.sort(atts, (left, right) -> right.getSize() - left.getSize());
+        Arrays.sort(atts, (left, right) -> Integer.compare(right.getSize(), left.getSize()));
         for ( Attachment att : atts) {
             System.out.println(att);
         }
