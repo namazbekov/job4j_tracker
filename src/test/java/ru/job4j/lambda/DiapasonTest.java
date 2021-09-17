@@ -23,8 +23,8 @@ public class DiapasonTest {
     }
     @Test
     public void whenExponentialFunction() {
-        List<Double> result = Diapason.diapason(1, 3, x -> Math.pow(x, x) + 1);
-        List<Double> expected = Arrays.asList(2D, 5D);
+        List<Double> result = Diapason.diapason(1, 3, x -> Math.pow(2, x) + 1);
+        List<Double> expected = Arrays.asList(3D, 5D);
         assertThat(result, is(expected));
     }
 
