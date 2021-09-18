@@ -12,9 +12,6 @@ public class Filter {
         number.add(-1);
         ArrayList<Integer> find = (ArrayList<Integer>) number.stream().filter(integer
                 -> integer > 0).collect(Collectors.toList());
-        for (Integer fin : find) {
-            System.out.println(fin);
-        }
-
+        find.forEach(System.out :: println);
     }
 }
