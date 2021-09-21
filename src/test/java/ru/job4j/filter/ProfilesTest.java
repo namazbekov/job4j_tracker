@@ -14,9 +14,10 @@ public class ProfilesTest {
                 list.add(new Profile(new Address("Moscow", "Pushkina", 15, 12)));
         List<Address> rsl = Profiles.collect(list);
         List<Address> expected = new ArrayList<>();
-                expected.add(new Address("New York", "Star", 9, 54));
                 expected.add(new Address("Moscow", "Pushkina", 15, 12));
+                expected.add(new Address("New York", "Star", 9, 54));
         assertThat(rsl, is(expected));
+
     }
     @Test
     public void thenToCut(){
