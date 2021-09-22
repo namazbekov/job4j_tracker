@@ -8,8 +8,10 @@ public class MapToList {
     public static Map<String, Integer> convert(List<Student> students) {
         Map<String, Integer> result = students
                 .stream()
-                .distinct()
-                .collect(Collectors.toMap(Student::getSurname, Student::getScore));
+                .collect(Collectors
+                        .toMap(Student::getSurname, Student::getScore,
+                                (first, last) -> first != null ? first : last)
+                );
         return result;
     }
 }
