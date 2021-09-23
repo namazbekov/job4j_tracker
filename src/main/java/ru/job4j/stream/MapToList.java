@@ -10,7 +10,7 @@ public class MapToList {
                 .stream()
                 .collect(Collectors
                         .toMap(Student::getSurname, Student::getScore,
-                                (first, last) -> first != null ? first : last)
+                                (first, last) -> first)
                 );
         return result;
     }
