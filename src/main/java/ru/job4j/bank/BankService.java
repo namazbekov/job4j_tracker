@@ -49,12 +49,11 @@ public class BankService {
      * @return  если есть совпадения возвращает имя пользователя, в противном случае возварщает null
      */
     public User findByPassport(String passport) {
-        for (User us : users.keySet()) {
-            if (us.getPassport().equals(passport)) {
-                return us;
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(s -> s.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -70,14 +69,12 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> list = users.get(user);
-            for (Account listFind : list) {
-                if (listFind.getRequisite().equals(requisite)) {
-                    return listFind;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(s -> s.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
-
         return null;
     }
 
