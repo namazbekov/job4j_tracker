@@ -13,13 +13,13 @@ public class MapToListTest {
     @Test
     public void thanToDubl() {
         List<Student> students = List.of(
-                new Student(10, "Surname1"),
-                new Student(10, "Surname1"),
-                new Student(40, "Surname4"),
-                new Student(50, "Surname5"),
-                new Student(50, "Surname5"),
-                new Student(70, "Surname7"),
-                new Student(90, "Surname9")
+                new Student( "Surname1", 10),
+                new Student( "Surname1", 10),
+                new Student( "Surname4", 40),
+                new Student( "Surname5", 50),
+                new Student( "Surname5", 50),
+                new Student( "Surname7", 70),
+                new Student( "Surname9", 90)
         );
         Map<String, Integer> rsl = MapToList.convert(students);
         Map<String, Integer> expected = new HashMap<String, Integer>();
