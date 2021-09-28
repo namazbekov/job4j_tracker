@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class PhoneDictionary {
 
-    private final ArrayList<Person> persons = new ArrayList<Person>();
+    private final ArrayList<Person> persons = new ArrayList<>();
 
     public void add(Person person) {
         this.persons.add(person);
@@ -17,7 +17,7 @@ public class PhoneDictionary {
         Predicate<Person> containAddress = (person) -> person.getAddress().contains(key);
         Predicate<Person> containPhone = (person) -> person.getPhone().contains(key);
         Predicate<Person> combine = containName.or(containSurname.or(containAddress.or(containPhone)));
-        ArrayList<Person> result = new ArrayList<>();
+        var result = new ArrayList<Person>();
         for (Person person: persons) {
             if (combine.test(person)) {
                 result.add(person);
