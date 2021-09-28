@@ -13,7 +13,7 @@ public class JobByNameTest {
 
     @Test
     public void jobByNameTest() {
-        List<Job> jobs = Arrays.asList(
+        List<Job> jobs = List.of(
                 new Job("Fix bug", 4),
                 new Job("Fix bug", 2),
                 new Job("X task", 0)

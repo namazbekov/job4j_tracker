@@ -14,7 +14,7 @@ public class JobDescByPriorityTest {
 
     @Test
     public void jobDestBYPriority() {
-        List<Job> jobs = Arrays.asList(
+        List<Job> jobs = List.of(
                 new Job("frog", 4),
                 new Job("dog", 2),
                 new Job("cat", 0)
