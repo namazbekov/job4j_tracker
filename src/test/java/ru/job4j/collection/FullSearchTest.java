@@ -14,7 +14,7 @@ public class FullSearchTest {
 
     @Test
     public void extractNumber() {
-        List<Task> tasks = List.of(
+        List<Task> tasks = Arrays.asList(
                 new Task("1", "First desc"),
                 new Task("2", "Second desc"),
                 new Task("1", "First desc")

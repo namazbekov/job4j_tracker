@@ -13,7 +13,7 @@ public class JobDescByNameTest {
 
     @Test
     public void jobDestByName() {
-        List<Job> jobs = List.of(
+        List<Job> jobs = Arrays.asList(
                 new Job("Fix bug", 4),
                 new Job("Fix bug", 2),
                 new Job("X task", 0)

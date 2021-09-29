@@ -13,7 +13,7 @@ public class NotifyAccountTest {
 
     @Test
     public void sent() {
-        List<Account> accounts = List.of(
+        List<Account> accounts = Arrays.asList(
                 new Account("123", "Petr Arsentev", "eDer3432f"),
                 new Account("142", "Petr Arsentev", "000001")
         );
@@ -28,7 +28,7 @@ public class NotifyAccountTest {
 
     @Test
     public void sen() {
-        List<Account> accounts = List.of(
+        List<Account> accounts = Arrays.asList(
                 new Account("123", "Petr Arsentev", "000001"),
                 new Account("123", "Petr Arsentev", "000001")
         );
