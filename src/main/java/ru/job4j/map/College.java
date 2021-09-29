@@ -16,7 +16,7 @@ public class College {
         Optional<Student> rsl = Optional.empty();
         for (Student s: students.keySet()) {
             if (account.equals(s.getAccount())) {
-                rsl = Optional.of(s);
+                rsl = Optional.of(s).stream().findFirst();
                 break;
             }
         }
@@ -30,7 +30,7 @@ public class College {
             Set<Subject> subjects = students.get(s.get());
             for (Subject subj : subjects) {
                 if (name.equals(subj.getName())) {
-                    rsl = Optional.of(subj);
+                    rsl = Optional.of(subj).stream().findFirst();
                     break;
                 }
             }
