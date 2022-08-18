@@ -15,7 +15,7 @@ public class SearchByNameAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         out.println("Поиск по имени");
         String name = input.askStr("Введите имя: ");
         List<Item> items = tracker.findByName(name);

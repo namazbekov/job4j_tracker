@@ -1,12 +1,10 @@
 package ru.job4j.tracker;
 
-import javax.swing.*;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.time.temporal.TemporalAccessor;
+import java.util.*;
 
 public class Item implements Comparable<Item> {
 
@@ -14,7 +12,7 @@ public class Item implements Comparable<Item> {
             DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
     private int id;
     private String name;
-    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now();;
 
     public Item(String name) {
         this.name = name;
@@ -24,18 +22,10 @@ public class Item implements Comparable<Item> {
         this.id = id;
     }
 
-    public Item(int id, String name) {
+    public Item(int id, String name, LocalDateTime created) {
         this.id = id;
         this.name = name;
-    }
-
-    public Item(LocalDateTime created) {
         this.created = created;
-    }
-
-
-    public LocalDateTime getCreated() {
-        return created;
     }
 
     public int getId() {
@@ -54,9 +44,26 @@ public class Item implements Comparable<Item> {
         this.name = name;
     }
 
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
     @Override
     public String toString() {
-        return String.format("id: %s, name: %s, created: %s", id, name, FORMATTER.format(created));
+        return String.format("id: %s, name: %s, created: %s", id, name, FORMATTER.format((TemporalAccessor) created));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
     @Override
@@ -65,14 +72,24 @@ public class Item implements Comparable<Item> {
     }
 
     public static void main(String[] args) {
+        /* Из Timestamp в LocalDateTime */
+        long millis = System.currentTimeMillis();
+        Timestamp timestamp = new Timestamp(millis);
+        LocalDateTime localDateTime = timestamp.toLocalDateTime();
+        /* Из LocalDateTime в Timestamp */
+        Timestamp timestampFromLDT = Timestamp.valueOf(localDateTime);
         List<Item> jobs = Arrays.asList(
-                new Item(4, "Impl task"),
-                new Item(2, "Fix bugs"),
-                new Item(1, "Reboot server")
+                new Item(4, "Impl task", localDateTime ),
+                new Item(2, "Fix bugs", localDateTime),
+                new Item(1, "Reboot server", localDateTime)
         );
         System.out.println(jobs);
         Collections.sort(jobs);
         System.out.println(jobs);
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
     }
 
 }

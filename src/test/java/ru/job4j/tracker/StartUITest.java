@@ -16,7 +16,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", "Item name", "1"}
         );
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         UserAction[] actions = {
                 new CreateAction(output),
                 new ExitAction()
@@ -28,7 +28,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Output output = new StubOutput();
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
@@ -45,7 +45,7 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Output output = new StubOutput();
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         Item item = tracker.add(new Item("Deleted item"));
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(item.getId()), "1"}
@@ -62,9 +62,9 @@ public class StartUITest {
     public void whenExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"}
+                new String[]{"0"}
         );
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         UserAction[] actions = {
                 new ExitAction()
         };
@@ -81,7 +81,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "1"}
         );
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         Item item = new Item("GGGG");
         tracker.add(item);
         UserAction[] actions = {
@@ -103,7 +103,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "Big", "1"}
         );
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         Item item = new Item("Big");
         tracker.add(item);
         UserAction[] actions = {new SearchByNameAction(out), new ExitAction()};
@@ -119,7 +119,7 @@ public class StartUITest {
     @Test
     public void whenFindByIdAction() {
         Output out = new StubOutput();
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         Item item = new Item("Frog");
         tracker.add(item);
         Input in = new StubInput(
@@ -145,7 +145,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"6", "0"}
         );
-        MemTracker tracker = new MemTracker();
+        SqlTracker tracker = new SqlTracker();
         UserAction[] actions = new UserAction[]{
                 new ExitAction()
         };

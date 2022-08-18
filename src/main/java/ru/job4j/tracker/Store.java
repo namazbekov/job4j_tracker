@@ -9,5 +9,4 @@ public interface Store {
     List<Item> findAll();
     List<Item> findByName(String key);
     Item findById(int id);
-
 }
