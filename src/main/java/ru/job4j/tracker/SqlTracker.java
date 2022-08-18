@@ -152,14 +152,14 @@ public class SqlTracker implements Store, AutoCloseable {
         Item item3 = new Item(1, "Test111", localDateTime);
         SqlTracker sqlTracker = new SqlTracker();
         sqlTracker.init();
-//        System.out.println(item);
-//        System.out.println(item1);
-//        System.out.println(item2);
-//        System.out.println(sqlTracker.replace(1 ,item3));
-//        System.out.println(sqlTracker.delete(1));
-//        System.out.println(sqlTracker.findById(2));
-//        System.out.println(sqlTracker.findAll());
-//        System.out.println(sqlTracker.findByName("test2"));
+        System.out.println(item);
+        System.out.println(item1);
+        System.out.println(item2);
+        System.out.println(sqlTracker.replace(1 ,item3));
+        System.out.println(sqlTracker.delete(1));
+        System.out.println(sqlTracker.findById(2));
+        System.out.println(sqlTracker.findAll());
+        System.out.println(sqlTracker.findByName("test2"));
         System.out.println(sqlTracker.findById(5));
     }
 }
