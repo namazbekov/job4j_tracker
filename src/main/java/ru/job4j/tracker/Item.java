@@ -72,11 +72,9 @@ public class Item implements Comparable<Item> {
     }
 
     public static void main(String[] args) {
-        /* Из Timestamp в LocalDateTime */
         long millis = System.currentTimeMillis();
         Timestamp timestamp = new Timestamp(millis);
         LocalDateTime localDateTime = timestamp.toLocalDateTime();
-        /* Из LocalDateTime в Timestamp */
         Timestamp timestampFromLDT = Timestamp.valueOf(localDateTime);
         List<Item> jobs = Arrays.asList(
                 new Item(4, "Impl task", localDateTime ),
