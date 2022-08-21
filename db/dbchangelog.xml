@@ -11,5 +11,4 @@
     <include file="scripts/update_001.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_002.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_003.sql" relativeToChangelogFile="true"/>
-    logicalFilePath=relative XML file path like(liquibase/changes.xml)"
 </databaseChangeLog>
