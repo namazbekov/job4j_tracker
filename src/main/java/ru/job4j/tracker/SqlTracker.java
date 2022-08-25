@@ -9,7 +9,11 @@ import java.util.Properties;
 
 public class SqlTracker implements Store, AutoCloseable {
 
-    private Connection cn;
+    private static Connection cn;
+
+    public SqlTracker(Connection connection) {
+        cn = connection;
+    }
 
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
@@ -149,7 +153,8 @@ public class SqlTracker implements Store, AutoCloseable {
         Item item1 = new Item(2, "test2", localDateTime);
         Item item2 = new Item(3, "test3", localDateTime);
         Item item3 = new Item(1, "Test111", localDateTime);
-        SqlTracker sqlTracker = new SqlTracker();
+
+        SqlTracker sqlTracker = new SqlTracker(cn);
         sqlTracker.init();
         System.out.println(item);
         System.out.println(item1);

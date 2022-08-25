@@ -5,7 +5,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import ru.job4j.tracker.model.Item;
+//import ru.job4j.tracker.model.Item;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -55,6 +55,7 @@ public class SqlTrackerTest {
     @Test
     public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
+        initConnection();
         Item item = new Item("item");
         tracker.add(item);
         assertThat(tracker.findById(item.getId()), is(item));
