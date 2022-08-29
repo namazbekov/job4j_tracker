@@ -6,8 +6,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.Properties;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class SqlTrackerTest {
 
@@ -54,7 +53,8 @@ public class SqlTrackerTest {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item"));
         assertTrue(tracker.delete(item.getId()));
-        assertThat(item.getId(), is("null"));
+        assertNull(tracker.findById(item.getId()));
+
     }
 
     @Test
@@ -63,7 +63,7 @@ public class SqlTrackerTest {
         Item item = tracker.add(new Item("item"));
         Item item2 = new Item("item222");
         assertTrue(tracker.replace(item.getId(), item2));
-        assertThat(item.getName(), is("item222"));
+        assertThat(tracker.findById(item.getId()).getName(), is("item222"));
     }
 
     @Test
@@ -82,6 +82,7 @@ public class SqlTrackerTest {
         Item item = tracker.add(new Item("item"));
         Item item2 = tracker.add(new Item("item"));
         Item item3 = tracker.add(new Item("item"));
-        assertThat(tracker.findAll(), is(List.of(item, item2, item3)));
+        Item test = new Item("Test");
+        assertThat(tracker.findAll(), is(List.of(item, item2, item3, test)));
     }
 }
