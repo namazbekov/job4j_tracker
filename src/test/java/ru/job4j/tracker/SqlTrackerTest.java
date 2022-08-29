@@ -1,12 +1,20 @@
 package ru.job4j.tracker;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.io.InputStream;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SqlTrackerTest {
 
@@ -82,7 +90,6 @@ public class SqlTrackerTest {
         Item item = tracker.add(new Item("item"));
         Item item2 = tracker.add(new Item("item"));
         Item item3 = tracker.add(new Item("item"));
-        Item test = new Item("Test");
-        assertThat(tracker.findAll(), is(List.of(item, item2, item3, test)));
+        assertThat(tracker.findAll(), is(List.of(item, item2, item3)));
     }
 }

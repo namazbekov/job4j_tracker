@@ -148,7 +148,6 @@ public class SqlTracker implements Store, AutoCloseable {
         long millis = System.currentTimeMillis();
         Timestamp timestamp = new Timestamp(millis);
         LocalDateTime localDateTime = timestamp.toLocalDateTime();
-        Timestamp timestampFromLDT = Timestamp.valueOf(localDateTime);
         Item item = new Item(1, "test1", localDateTime);
         Item item1 = new Item(2, "test2", localDateTime);
         Item item2 = new Item(3, "test3", localDateTime);

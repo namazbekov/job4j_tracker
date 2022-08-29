@@ -2,15 +2,13 @@ package ru.job4j.tracker;
 
 
 import org.junit.Test;
-
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class ItemIdComparatorTest {
 
@@ -26,7 +24,7 @@ public class ItemIdComparatorTest {
         list.add(item3);
         list.add(item2);
         list.add(item1);
-        Collections.sort(list, new ItemIdComparator());
+        list.sort(new ItemIdComparator());
         List<Item> expected = new ArrayList<>();
         expected.add(item1);
         expected.add(item2);
