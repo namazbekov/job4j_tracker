@@ -1,19 +1,13 @@
 package ru.job4j.tracker;
 
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import org.junit.*;
 import java.io.InputStream;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class SqlTrackerTest {
 
@@ -50,66 +44,44 @@ public class SqlTrackerTest {
 
     @Test
     public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
-        long millis = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(millis);
-        LocalDateTime localDateTime = timestamp.toLocalDateTime();
         SqlTracker tracker = new SqlTracker(connection);
-        initConnection();
-        Item item = new Item(1, "item",localDateTime);
-        tracker.add(item);
+        Item item = tracker.add(new Item("item"));
         assertThat(tracker.findById(item.getId()), is(item));
     }
 
     @Test
     public void whenSaveItemAndDropItem() {
-        long millis = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(millis);
-        LocalDateTime localDateTime = timestamp.toLocalDateTime();
         SqlTracker tracker = new SqlTracker(connection);
-        initConnection();
-        Item item = new Item(1, "item",localDateTime);
-        tracker.add(item);
-        assertThat(tracker.delete(item.getId()), is(true));
+        Item item = tracker.add(new Item("item"));
+        assertTrue(tracker.delete(item.getId()));
+        assertThat(item.getId(), is("null"));
     }
 
     @Test
     public void whenSaveItemAndReplaceItem() {
-        long millis = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(millis);
-        LocalDateTime localDateTime = timestamp.toLocalDateTime();
         SqlTracker tracker = new SqlTracker(connection);
-        initConnection();
-        Item item = new Item(1, "item",localDateTime);
-        Item item2 = new Item(item.getId(), "item222",localDateTime);
-        tracker.add(item);
-        assertThat(tracker.replace(item.getId(), item2), is(true));
+        Item item = tracker.add(new Item("item"));
+        Item item2 = new Item("item222");
+        assertTrue(tracker.replace(item.getId(), item2));
+        assertThat(item.getName(), is("item222"));
     }
 
     @Test
     public void whenSaveItemAndRFindByNameItem() {
-        long millis = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(millis);
-        LocalDateTime localDateTime = timestamp.toLocalDateTime();
         SqlTracker tracker = new SqlTracker(connection);
-        initConnection();
-        List<Item> list = new ArrayList<>();
-        Item item = new Item(1, "item", localDateTime);
-        tracker.add(item);
-        list.add(item);
-        assertThat(tracker.findByName("item"), is(list));
+        Item item = tracker.add(new Item("item"));
+        Item item2 = tracker.add(new Item("item"));
+        Item item3 = tracker.add(new Item("item"));
+        assertThat(tracker.findByName("item"),
+                is(List.of(item, item2, item3)));
     }
 
     @Test
     public void whenSaveItemAndRFindAllItems() {
-        long millis = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(millis);
-        LocalDateTime localDateTime = timestamp.toLocalDateTime();
         SqlTracker tracker = new SqlTracker(connection);
-        initConnection();
-        List<Item> list = new ArrayList<>();
-        Item item = new Item(1, "item", localDateTime);
-        tracker.add(item);
-        list.add(item);
-        assertThat(tracker.findAll(), is(list));
+        Item item = tracker.add(new Item("item"));
+        Item item2 = tracker.add(new Item("item"));
+        Item item3 = tracker.add(new Item("item"));
+        assertThat(tracker.findAll(), is(List.of(item, item2, item3)));
     }
 }
